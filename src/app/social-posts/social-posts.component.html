@@ -1,0 +1,9 @@
+<h2>My Thoughts</h2>
+<button (click)="toggleNewPostForm()">Add New Thought</button>
+<div *ngIf="showNewPostForm">
+    <app-post-form (submitted)="onSubmit($event)" ></app-post-form>
+    </div>
+<ng-container *ngFor="let thePost of allPosts">
+    <app-post [post]="thePost" (deleted)="onDelete($event)"></app-post>
+</ng-container>
+<br/><br />
